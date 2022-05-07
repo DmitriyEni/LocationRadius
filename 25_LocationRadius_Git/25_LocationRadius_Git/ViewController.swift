@@ -22,7 +22,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            
         }
     }
     
@@ -32,7 +31,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         locationManager.startUpdatingLocation()
         let my = CLLocation(latitude: myLoc.latitude, longitude: myLoc.longitude)
-        
         let distance = my.distance(from: center) / 1000
         
         if distance <= 2 {
