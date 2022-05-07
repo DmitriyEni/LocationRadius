@@ -17,7 +17,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
-        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -32,11 +31,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         let my = CLLocation(latitude: myLoc.latitude, longitude: myLoc.longitude)
         let distance = my.distance(from: center) / 1000
-        
         if distance <= 2 {
-            messageLabel.text = "ты в радиусе"
+            messageLabel.text = "Ты на курсах"
         } else {
-            messageLabel.text = "ты говно"
+            messageLabel.text = "Ты где-то шляешься"
         }
     }
 }
